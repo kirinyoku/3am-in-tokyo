@@ -1,5 +1,5 @@
 import replicate
-from flask import Flask, request, jsonify
+from flask import Flask, request
 from flask_cors import CORS
 
 app = Flask(__name__)
