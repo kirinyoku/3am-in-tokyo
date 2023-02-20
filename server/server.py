@@ -19,8 +19,8 @@ inputs = {
     'scheduler': "DPMSolverMultistep", 
 }
 
-@app.route('/form', methods=['POST'])
-def form():
+@app.route('/api', methods=['POST'])
+def api():
   global inputs
   data = request.get_json()
   inputs['prompt'] = data['prompt']
@@ -28,14 +28,14 @@ def form():
 
   return 'Success'
 
-@app.route('/predict', methods=['GET'])
-def predict():
+@app.route('/response', methods=['GET'])
+def response():
   global inputs
   try: 
-    response = version.predict(**inputs)[0]
+    res = version.predict(**inputs)[0]
   except:
-    response = 'error'
-  return {'data': response}
+    res = 'error'
+  return {'data': res}
 
 if __name__ == '__main__':
    app.run()

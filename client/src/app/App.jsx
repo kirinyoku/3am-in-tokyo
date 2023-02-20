@@ -7,11 +7,11 @@ function App() {
 
   const [predict, setPredict] = useState('');
   const [prompt, setPrompt] = useState('');
-  const [negativePrompt, setNegativePrompt] = useState('lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry');
+  const [negativePrompt, setNegativePrompt] = useState('nsfw, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry');
 
   const getPredict = () => {
     setPredict('loading');
-    fetch('http://localhost:5000/predict')
+    fetch('http://localhost:5000/response')
       .then(res => res.json())
       .then(data => {
         setPredict(data.data);
@@ -21,7 +21,7 @@ function App() {
   const sumbitHandler = (e) => {
     e.preventDefault();
     const data = {prompt, negativePrompt};
-    fetch('http://localhost:5000/form', {
+    fetch('http://localhost:5000/api', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {

@@ -23,7 +23,7 @@ export const InputSection = ({ sumbitHandler, setPrompt, setNegativePrompt, prom
           <InputField type="text" name='negative-prompt' id='negative-prompt' onChange={(e) => setNegativePrompt(e.currentTarget.value)} value={negativePrompt}/>
           <p className='input__description'>The prompt or prompts not to guide the image generation (what you do not want to see in the generation). Ignored when not using guidance.</p>
         </fieldset>
-        <button className='input__button' type="submit">Submit</button>
+        <button className='input__submit' type="submit">Submit</button>
       </form>
     </section>
   )

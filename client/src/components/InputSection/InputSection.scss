@@ -16,7 +16,7 @@
     display: flex;
     align-items: center;
     gap: 0.2rem;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.7em;
 
     svg {
       height: 1rem;
@@ -28,8 +28,8 @@
       display: inline-block;
       font-size: 1rem;
       line-height: 1.5;
-      padding: 0.25rem 0.5rem;
-      background-color: rgba(0, 0, 0, 0.05);
+      padding: 0.2rem 0.4rem;
+      background-color: rgba(255, 255, 255, 0.2);
     }
   }
 
@@ -37,17 +37,13 @@
     opacity: 0.5;
   }
 
-  &__button {
+  &__submit {
     border: none;
     font-size: 1.2rem;
-    padding: 0.5em 1em;
-    color: hsl(0, 0%, 100%);
-    background-color: hsl(0, 0%, 0%);
-    transition: background-color 150ms linear;
-
-    &:is(:hover, :focus-within) {
-      cursor: pointer;
-      background-color: hsl(0, 0%, 20%);
-    }
+    padding: 0.5em 2em;
+    font-family: inherit;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    cursor: pointer;
   }
 }

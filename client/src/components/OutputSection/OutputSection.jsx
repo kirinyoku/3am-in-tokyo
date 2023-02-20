@@ -9,7 +9,7 @@ export const OutputSection = ({ predict }) => {
       <div className='output__predict'>
         { predict 
           ? predict === 'loading' 
-            ? <BounceLoader className='output__loading' color="#000000"/> 
+            ? <BounceLoader className='output__loading' color="var(--secondary-color)"/> 
             : predict === 'error'
               ? <p className='output__text'>Something went wrong, please try again</p>
               : <img src={predict} alt="predict" />
