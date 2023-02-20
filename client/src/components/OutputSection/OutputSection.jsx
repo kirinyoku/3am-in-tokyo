@@ -10,8 +10,10 @@ export const OutputSection = ({ predict }) => {
         { predict 
           ? predict === 'loading' 
             ? <BounceLoader className='output__loading' color="#000000"/> 
-            : <img src={predict} alt="predict" />
-          : <p className='output__placeholder'>Images you generated will be shown here</p>
+            : predict === 'error'
+              ? <p className='output__text'>Something went wrong, please try again</p>
+              : <img src={predict} alt="predict" />
+          : <p className='output__text'>Images you generated will be shown here</p>
         }
       </div>
     </section>

@@ -5,8 +5,8 @@ from flask_cors import CORS
 app = Flask(__name__)
 cors = CORS(app)
 
-model = replicate.models.get("cjwbw/anything-v4.0")
-version = model.versions.get("42a996d39a96aedc57b2e0aa8105dea39c9c89d9d266caf6bb4327a1c191b061")
+model = replicate.models.get("cjwbw/anything-v3-better-vae")
+version = model.versions.get("09a5805203f4c12da649ec1923bb7729517ca25fcac790e640eaa9ed66573b65")
 
 inputs = {
     'prompt': '',
@@ -26,15 +26,15 @@ def form():
   inputs['prompt'] = data['prompt']
   inputs['negative_prompt'] = data['negativePrompt']
 
-  return 'ok'
+  return 'Success'
 
 @app.route('/predict', methods=['GET'])
 def predict():
   global inputs
-  try:
+  try: 
     response = version.predict(**inputs)[0]
   except:
-    predict()
+    response = 'error'
   return {'data': response}
 
 if __name__ == '__main__':
