@@ -17,8 +17,6 @@
 */
 html,
 body {
-  height: 100vh;
-  height: 100svh;
   font-family: 'Basier Square', sans-serif;
 }
 /*
@@ -70,4 +68,8 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+}
+
+#root {
+  width: 100vw;
 }
