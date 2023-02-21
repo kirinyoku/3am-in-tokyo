@@ -1,8 +1,20 @@
 import React from 'react';
 import BounceLoader from 'react-spinners/BounceLoader';
+import { saveAs } from 'file-saver';
+import { Button } from '../Button/Button';
 import './OutputSection.scss';
 
 export const OutputSection = ({ predict }) => {
+
+  const downloadImage = (predict) => {
+    saveAs(predict, 'image.png');
+  }
+
+  const copyLink = (predict, event) => {
+    event.currentTarget.innerHTML = 'URL Copied';
+    navigator.clipboard.writeText(predict);
+  }
+
   return (
     <section className='output' aria-label='output'>
       <h2 className='output__title'>Output</h2>
@@ -16,6 +28,10 @@ export const OutputSection = ({ predict }) => {
           : <p className='output__text'>Images you generated will be shown here</p>
         }
       </div>
+      <footer className='output__footer'>
+        <Button onClick={() => downloadImage(predict)}>Download</Button>
+        <Button onClick={(e) => copyLink(predict, e)}>Share</Button>
+      </footer>
     </section>
   )
 }

@@ -1,14 +1,4 @@
 .app {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  gap: 1rem;
   margin: 0 auto;
-  padding: 0.5rem 1rem;
-  width: min(1440px, 100%);
-
-  @media (min-width: 62.5rem) {
-    flex-direction: row;
-    align-items: flex-start;
-  }
+  width: min(90rem, 95%);
 }

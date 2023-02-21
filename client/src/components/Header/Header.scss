@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  margin-bottom: clamp(0.5rem, 0.2rem + 1.5vw, 2.4rem);
+  border-bottom: 0.15rem solid var(--secondary-color);
+
+  &__title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(1.5rem, 1rem + 1vw, 2.4rem);
+    line-height: 1;
+  }
+}

@@ -1,0 +1,11 @@
+.main {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 2rem;
+
+  @media (min-width: 62.5rem) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}

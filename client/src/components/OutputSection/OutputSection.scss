@@ -9,7 +9,7 @@
 
   &__title {
     font-weight: 500;
-    font-size: clamp(1.5rem, 1rem + 1vw, 2rem);
+    font-size: clamp(1.8rem, 1rem + 1vw, 2.2rem);
     margin-bottom: 0.2em;
   }
 
@@ -19,15 +19,27 @@
     justify-content: center;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
 
     @media (min-width: 62.5rem) {
       width: 512px;
       height: 512px;
+      overflow: hidden;
     }
   }
 
   &__text {
     font-size: 1.3rem;
     text-align: center;
+  }
+
+  &__footer {
+    display: grid;
+    gap: 0.5rem;
+
+    @media (min-width: 62.5rem) {
+      grid-auto-flow: column;
+    }
   }
 }
