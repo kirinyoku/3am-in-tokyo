@@ -28,9 +28,10 @@ body {
   display: flex;
   align-items: center;
   line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+  padding-bottom: 1rem;
   color: var(--secondary-color);
   background-color: var(--primary-color);
+  -webkit-font-smoothing: antialiased;
 }
 
 body.light {
@@ -40,9 +41,17 @@ body.light {
 }
 
 body.dark {
-  --primary-color: hsl(0, 0%, 0%);
+  --primary-color: hsl(0, 0%, 10%);
   --secondary-color: hsl(0, 0%, 100%);
-  --accent-color: hsl(0, 0%, 20%);
+  --accent-color: hsl(0, 0%, 28%);
+}
+
+a {
+  color: hsl(356, 85%, 57%);
+
+  &:hover {
+    text-decoration-thickness: 0.1em;
+  }
 }
 
 /*

@@ -1,0 +1,17 @@
+.range {
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  gap: 1rem;
+  margin-bottom: 0.5em;
+
+  &__input-number {
+    height: 2.2em;
+    font-size: 1.5rem;
+    line-height: 1;
+    padding: 0.2em 0.4em;
+    border: 1px solid var(--secondary-color);
+    border-radius: 0;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+}

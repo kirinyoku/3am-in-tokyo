@@ -2,6 +2,7 @@
 
   width: 100%;
   height: 100%;
+  margin-bottom: 2rem;
 
   @media (min-width: 62.5rem) {
     width: auto;
@@ -11,6 +12,12 @@
     font-weight: 500;
     font-size: clamp(1.8rem, 1rem + 1vw, 2.2rem);
     margin-bottom: 0.2em;
+
+    span {
+      font-weight: 600;
+      color: hsl(356, 85%, 57%);
+      font-size: clamp(1.4rem, 1rem + 0.5vw, 2rem);
+    }
   }
 
   &__predict {

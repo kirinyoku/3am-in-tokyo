@@ -17,7 +17,7 @@ export const OutputSection = ({ predict }) => {
 
   return (
     <section className='output' aria-label='output'>
-      <h2 className='output__title'>Output</h2>
+      <h2 className='output__title'>Output <span>アウトプット</span></h2>
       <div className='output__predict'>
         { predict 
           ? predict === 'loading' 
