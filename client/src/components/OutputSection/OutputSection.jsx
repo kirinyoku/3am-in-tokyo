@@ -7,7 +7,8 @@ import './OutputSection.scss';
 export const OutputSection = ({ predict }) => {
 
   const downloadImage = (predict) => {
-    saveAs(predict, 'image.png');
+    console.log(saveAs, 'image.png');
+    saveAs(predict);
   }
 
   const copyLink = (predict, event) => {

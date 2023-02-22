@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { Footer } from '../components/Footer/Footer';
 import { Header } from '../components/Header/Header';
 import { InfoSection } from '../components/InfoSection/InfoSection';
 import { Main } from '../components/Main/Main';
@@ -92,6 +93,7 @@ function App() {
           setGuidanceScale={setGuidanceScale}
         />
         <InfoSection />
+        <Footer />
     </div>
   );
 }
