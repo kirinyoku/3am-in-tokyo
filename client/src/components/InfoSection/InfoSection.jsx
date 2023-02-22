@@ -8,8 +8,8 @@ export const InfoSection = () => {
         <h2 className='info-section__title'>Examples</h2>
         <ul className='info-section__list'>
           <li>
-            <a href="https://replicate.delivery/pbxt/lL3yl8w1VhJFPJOntpjU4hNFvNcekiFXDsY8KtjuwjkiYcQIA/out-0.png" rel="noreferrer" target='_blank'>
-              <img src="https://replicate.delivery/pbxt/lL3yl8w1VhJFPJOntpjU4hNFvNcekiFXDsY8KtjuwjkiYcQIA/out-0.png" alt="example1" />
+            <a href="https://replicate.delivery/pbxt/pk6T3cRJcv7DP10EfEnbPeEnVxkDZjC4BMBQX2h0LfuGpxAhA/out-0.png" rel="noreferrer" target='_blank'>
+              <img src="https://replicate.delivery/pbxt/pk6T3cRJcv7DP10EfEnbPeEnVxkDZjC4BMBQX2h0LfuGpxAhA/out-0.png" alt="example1" />
             </a>
           </li>
           <li>
