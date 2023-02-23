@@ -6,7 +6,7 @@ export const ThemeToggle = ({ toggleTheme }) => {
     <div className='theme'>
       <span className='theme__label'>Dark Mode</span>
       <label className="theme__toggle">
-        <input type="checkbox" onChange={toggleTheme}/>
+        <input type="checkbox" onChange={toggleTheme} defaultChecked/>
         <span className="theme__toggle-slider round"></span>
       </label>
     </div>

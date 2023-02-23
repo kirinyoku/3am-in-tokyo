@@ -24,7 +24,7 @@ function App() {
   const [scheduler, setScheduler] = useState('DPMSolverMultistep');
   const [inferenceSteps, setInferenceSteps] = useState(20);
   const [guidanceScale, setGuidanceScale] = useState(7);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const getPredict = () => {
     setPredict('loading');

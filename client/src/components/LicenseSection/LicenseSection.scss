@@ -1,0 +1,26 @@
+.license-section {
+
+  margin-bottom: 2.5rem;
+
+  &__title {
+    line-height: 1;
+    font-weight: 400;
+    font-size: clamp(1.5rem, 1rem + 1vw, 2rem);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 0.08em solid var(--accent-color);
+  }
+
+  &__text {
+    margin-bottom: 1em;
+  }
+
+  &__list {
+    list-style-type: decimal;
+    margin: 1.5rem;
+
+    li {
+      padding: 0.5rem, 0.25rem;
+    }
+  }
+}
