@@ -24,7 +24,7 @@ export const OutputSection = ({ predict }) => {
           ? predict === 'loading' 
             ? <BounceLoader className='output__loading' color="var(--secondary-color)"/> 
             : predict === 'error'
-              ? <p className='output__text'>Something went wrong, please try again</p>
+              ? <p className='output__text-error'>NSFW content detecte <span>😳</span></p>
               : <img src={predict} alt="predict" />
           : <p className='output__text'>Images you generated will be shown here</p>
         }

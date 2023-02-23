@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Footer } from '../components/Footer/Footer';
 import { Header } from '../components/Header/Header';
 import { InfoSection } from '../components/InfoSection/InfoSection';
@@ -19,7 +18,7 @@ function App() {
     'https://i.pinimg.com/564x/69/96/2e/69962e48a18149072eed2b6c8651711e.jpg'
   ]
 
-  const [predict, setPredict] = useState();
+  const [predict, setPredict] = useState('');
   const [prompt, setPrompt] = useState('');
   const [negativePrompt, setNegativePrompt] = useState('nsfw, lowres, ((bad anatomy)), ((bad hands)), text, missing finger, extra digits, fewer digits, blurry, ((mutated hands and fingers)), (poorly drawn face), ((mutation)), ((deformed face)), (ugly), ((bad proportions)), ((extra limbs)), extra face, (double head), (extra head), ((extra feet)), monster, logo, cropped, worst quality, low quality, normal quality, jpeg, humpbacked, long body, long neck, ((jpeg artifacts))');
   const [scheduler, setScheduler] = useState('DPMSolverMultistep');
@@ -72,12 +71,21 @@ function App() {
 
   useEffect(() => {
     const body = document.querySelector('body');
-    isDarkMode ? body.classList = 'dark' : body.classList = 'light'
+    if (isDarkMode) {
+      body.className = 'dark';
+      document.title = '3:00 AM in Tokyo';
+    } else {
+      body.className = 'light';
+      document.title = '3:00 PM in Tokyo';
+    }
   }, [isDarkMode])
 
   return (
     <div className='app'>
-        <Header toggleTheme={toggleTheme} />
+        <Header 
+          toggleTheme={toggleTheme} 
+          isDarkMode={isDarkMode} 
+        />
         <Main 
           sumbitHandler={sumbitHandler} 
           setPrompt={setPrompt} 

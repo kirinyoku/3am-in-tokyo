@@ -39,6 +39,18 @@
   &__text {
     font-size: 1.3rem;
     text-align: center;
+
+    &-error {
+      @extend .output__text;
+      display: flex;
+      align-items: center;
+      color: red;
+
+      span {
+        font-size: 1.5em;
+        margin-left: 0.1rem;
+      }
+    }
   }
 
   &__footer {
