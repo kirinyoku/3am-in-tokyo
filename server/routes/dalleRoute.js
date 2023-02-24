@@ -19,11 +19,11 @@ router.route('/').get((req, res) => {
 router.route('/').post(async (req, res) => {
   try {
 
-    const { prompt, height, width } = req.body;
+    const { prompt, size } = req.body;
     const aiResponse = await openai.createImage({
-      prompt,
       n: 1,
-      size: `${width}x${height}`,
+      prompt,
+      size: size,
     })
 
     const imageURL = aiResponse.data.data[0].url;

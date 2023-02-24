@@ -10,8 +10,7 @@ import './App.scss';
 function App() {
 
   const [prompt, setPrompt] = useState('');
-  const [width, setWidth] = useState('512');
-  const [height, setHeight] = useState('512');
+  const [size, setSize] = useState('512x512');
   const [predict, setPredict] = useState(imagePlaceholder);
 
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -26,7 +25,7 @@ function App() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ prompt, height, width }),
+      body: JSON.stringify({ prompt, size }),
     });
 
     const data = await response.json();
@@ -55,12 +54,10 @@ function App() {
           isDarkMode={isDarkMode} 
         />
         <Main 
-          width={width}
-          height={height}
+          seze={size}
           prompt={prompt} 
           predict={predict}
-          setWidth={setWidth}
-          setHeight={setHeight} 
+          setSize={setSize}
           setPrompt={setPrompt}
           sumbitHandler={sumbitHandler} 
         />

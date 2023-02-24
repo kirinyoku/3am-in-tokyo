@@ -6,11 +6,9 @@ import './Main.scss';
 export const Main = (props) => {
   
   const {
-    width,
-    height,
-    setWidth,
-    setHeight, 
+    size,
     prompt, 
+    setSize, 
     predict, 
     setPrompt, 
     sumbitHandler, 
@@ -19,11 +17,9 @@ export const Main = (props) => {
   return (
     <main className='main'>
       <InputSection 
-        width={width}
-        height={height}
+        size={size}
         prompt={prompt} 
-        setWidth={setWidth}
-        setHeight={setHeight}
+        setSize={setSize}
         setPrompt={setPrompt} 
         sumbitHandler={sumbitHandler} 
       />
