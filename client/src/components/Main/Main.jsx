@@ -5,35 +5,27 @@ import './Main.scss';
 
 export const Main = (props) => {
   
-  const { 
-    sumbitHandler, 
-    setPrompt, 
-    setNegativePrompt, 
+  const {
+    width,
+    height,
+    setWidth,
+    setHeight, 
     prompt, 
-    negativePrompt, 
     predict, 
-    scheduler, 
-    setScheduler,
-    inferenceSteps,
-    setInferenceSteps,
-    guidanceScale,
-    setGuidanceScale
+    setPrompt, 
+    sumbitHandler, 
   } = props
 
   return (
     <main className='main'>
       <InputSection 
-        sumbitHandler={sumbitHandler} 
-        setPrompt={setPrompt} 
-        setNegativePrompt={setNegativePrompt} 
+        width={width}
+        height={height}
         prompt={prompt} 
-        negativePrompt={negativePrompt}
-        scheduler={scheduler}
-        setScheduler={setScheduler}
-        inferenceSteps={inferenceSteps}
-        setInferenceSteps={setInferenceSteps}
-        guidanceScale={guidanceScale}
-        setGuidanceScale={setGuidanceScale}
+        setWidth={setWidth}
+        setHeight={setHeight}
+        setPrompt={setPrompt} 
+        sumbitHandler={sumbitHandler} 
       />
       <OutputSection predict={predict}/>
     </main>

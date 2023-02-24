@@ -4,14 +4,14 @@ import './Select.scss';
 export const Select = (props) => {
 
   const { options } = props;
-  const {scheduler, setScheduler } = props;
+  const {value, setValue } = props;
 
   const selectHandler = (event) => {
-    setScheduler(event.currentTarget.value);
+    setValue(event.currentTarget.value);
   }
 
   return (
-    <select className='select' onChange={(e) => selectHandler(e)} defaultValue={scheduler}>
+    <select className='select' onChange={(e) => selectHandler(e)} defaultValue={value}>
       {options.map((option, index) => {
         return (
           <option key={index}>

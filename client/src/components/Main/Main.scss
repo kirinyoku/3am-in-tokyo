@@ -5,8 +5,10 @@
   margin-bottom: 3rem;
 
   @media (min-width: 62.5rem) {
+    display: flex;
+    column-gap: 2rem;
     flex-direction: row;
     align-items: flex-start;
-    column-gap: 2rem;
+    justify-content: space-between;
   }
 }
