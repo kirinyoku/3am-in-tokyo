@@ -35,29 +35,47 @@ function App() {
       });
   }
 
-  const sumbitHandler = (e) => {
+  // const sumbitHandler = (e) => {
+  //   e.preventDefault();
+  //   const data = {
+  //     prompt, 
+  //     negativePrompt, 
+  //     scheduler, 
+  //     inferenceSteps, 
+  //     guidanceScale
+  //   };
+  //   fetch('http://localhost:5000/api', {
+  //     method: 'POST',
+  //     body: JSON.stringify(data),
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     }
+  //   })
+  //     .then(res => {
+  //       console.log(res);
+  //       getPredict();
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     })
+  // }
+
+
+  // OpenAI DALL-E
+  const sumbitHandler = async (e) => {
     e.preventDefault();
-    const data = {
-      prompt, 
-      negativePrompt, 
-      scheduler, 
-      inferenceSteps, 
-      guidanceScale
-    };
-    fetch('http://localhost:5000/api', {
+    setPredict('loading');
+
+    const response = await fetch('http://localhost:8080/api/v1/dalle', {
       method: 'POST',
-      body: JSON.stringify(data),
       headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-      .then(res => {
-        console.log(res);
-        getPredict();
-      })
-      .catch(err => {
-        console.log(err);
-      })
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ prompt }),
+    });
+
+    const data = await response.json();
+    setPredict(data.data);
   }
 
   const toggleTheme = () => {

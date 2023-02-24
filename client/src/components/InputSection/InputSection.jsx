@@ -30,7 +30,7 @@ export const InputSection = (props) => {
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" role="presentation"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg>
             <code>prompt</code>
           </label>
-          <Input type='text' name='prompt' id='prompt' onChange={(e) => setPrompt(e.currentTarget.value)} value={prompt} required autocomplete="off" />
+          <Input type='text' name='prompt' id='prompt' onChange={(e) => setPrompt(e.currentTarget.value)} value={prompt} required autoComplete="off" />
           <p className='input-section__description'>Input prompt</p>
         </fieldset>
         <fieldset className='input-section__fieldset'>
