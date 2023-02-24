@@ -15,7 +15,6 @@ function App() {
 
   const [isDarkMode, setIsDarkMode] = useState(true);
 
-  // OpenAI DALL-E
   const sumbitHandler = async (e) => {
     e.preventDefault();
     setPredict('loading');
@@ -54,7 +53,7 @@ function App() {
           isDarkMode={isDarkMode} 
         />
         <Main 
-          seze={size}
+          size={size}
           prompt={prompt} 
           predict={predict}
           setSize={setSize}

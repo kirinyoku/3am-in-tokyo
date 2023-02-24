@@ -3,8 +3,7 @@ import './Select.scss';
 
 export const Select = (props) => {
 
-  const { options } = props;
-  const {value, setValue } = props;
+  const {options, value, setValue } = props;
 
   const selectHandler = (event) => {
     setValue(event.currentTarget.value);

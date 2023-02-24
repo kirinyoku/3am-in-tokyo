@@ -29,10 +29,10 @@ export const InputSection = (props) => {
         <fieldset className='input-section__fieldset'>
           <label className='input-section__label' htmlFor="size">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline-block mr-2 w-3 h-3" role="presentation"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
-            <code>width</code>
+            <code>size</code>
           </label>
-          <Select options={['128x128', '256x256', '512x512', '1024x1024']} id='size' value={size} setValue={setSize} selected={size} />
-          <p className='input-section__description'>Width of output image. Maximum size is 1024x1024 because of memory limits</p>
+          <Select options={['128x128', '256x256', '512x512', '1024x1024']} id='size' value={size} setValue={setSize}/>
+          <p className='input-section__description'>Size of output image. Maximum size is 1024x1024 because of memory limits</p>
         </fieldset>
         <Button type="submit">Submit</Button>
       </form>
