@@ -19,7 +19,7 @@ function App() {
     e.preventDefault();
     setPredict('loading');
 
-    const response = await fetch('https://api-3am-in-tokyo-kirinyoku.vercel.app/api/v1/dalle', {
+    const response = await fetch('https://api-3am-in-tokyo-kirinyoku.vercel.app/api/v1/dall-e', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
