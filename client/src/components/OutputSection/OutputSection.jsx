@@ -23,7 +23,7 @@ export const OutputSection = ({ predict }) => {
           ? predict === 'loading' 
             ? <BounceLoader className='output__loading' color="var(--secondary-color)"/> 
             : predict === 'error'
-              ? <p className='output__text-error'>NSFW content detected<span>😳</span></p>
+              ? <p className='output__text-error'>It looks like this request may not follow our <a href="#content-policy">content policy</a></p>
               : <img src={predict} alt="predict" />
           : <p className='output__text'>Images you generated will be shown here</p>
         }

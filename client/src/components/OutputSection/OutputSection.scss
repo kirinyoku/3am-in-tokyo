@@ -42,13 +42,13 @@
 
     &-error {
       @extend .output__text;
-      display: flex;
-      align-items: center;
-      color: red;
+      padding: 0 0.5rem;
 
-      span {
-        font-size: 1.5em;
-        margin-left: 0.1rem;
+      a {
+        opacity: 0.4;
+        display: inline;
+        text-decoration: none;
+        color: var(--secondary-color);
       }
     }
   }

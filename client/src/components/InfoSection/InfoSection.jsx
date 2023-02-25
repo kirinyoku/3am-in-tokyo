@@ -1,28 +1,24 @@
 import React from 'react';
 import { LicenseSection } from '../LicenseSection/LicenseSection';
+import example from '../../assets/example.png';
 import './InfoSection.scss';
 
 export const InfoSection = () => {
   return (
     <section className='info-section'>
-      <div className='info-section__row'> 
-        <h2 className='info-section__title'>Run time and cost</h2>
-        <p className='info-section__text'>Predictions run on Nvidia T4 GPU hardware. Predictions typically complete within 13 seconds.</p>
-      </div>
       <div className='info-section__row'>
         <h2 className='info-section__title'>Readme</h2>
-        <p className='info-section__text'>weights from: <a href="https://huggingface.co/andite/anything-v4.0" rel="noreferrer" target='_blank'>andite/anything-v4.0</a> </p>
+        <p className='info-section__text'>weights from: <a href="https://openai.com/dall-e-2/" rel="noreferrer" target='_blank'>openai.com/dall-e-2</a></p>
         <article className='info-section__article'>
-          <h1><b>Anything V4</b></h1>
-          <p>Welcome to Anything V4 - a latent diffusion model for weebs. The newest version of Anything. This model is intended to produce high-quality, highly detailed anime style with just a few prompts. Like other anime-style Stable Diffusion models, it also supports danbooru tags to generate images.</p>
-          <p>e.g. <b>1girl, white hair, golden eyes, beautiful eyes, detail, flower meadow, cumulonimbus clouds, lighting, detailed sky, garden</b></p>
+          <h1><b>DALL-E</b></h1>
+          <p>DALL·E 2 is a new AI system that can create realistic images and art from a description in natural language. DALL·E 2 can create original, realistic images and art from a text description. It can combine concepts, attributes, and styles.</p>
+          <p>DALL·E 2 has learned the relationship between images and the text used to describe them. It uses a process called “diffusion,” which starts with a pattern of random dots and gradually alters that pattern towards an image when it recognizes specific aspects of that image.</p>
+          <p>e.g. <b>riding a horselounging in a tropical resort in spaceplaying basketball with cats in space</b></p>
           <p>
-            <h2>Anime Girl:</h2>
-            <img src="https://huggingface.co/andite/anything-v4.0/resolve/main/example-1.png" alt='example3'/>
+            <img src={example} alt='example'/>
           </p>
           <pre>
-            <code>masterpiece, best quality, 1girl, white hair, medium hair, cat ears, closed eyes, looking at viewer, :3, cute, scarf, jacket, outdoors, streets 
-            Steps: 20, Sampler: DPM++ 2M Karras, CFG scale: 7</code>
+            <code>riding a horselounging in a tropical resort in spaceplaying basketball with cats in space</code>
           </pre>
         </article>
       </div>
