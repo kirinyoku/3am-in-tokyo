@@ -1,7 +1,5 @@
 .input-section {
 
-  width: 100%;
-
   &__title {
     font-weight: 500;
     font-size: clamp(1.8rem, 1rem + 1vw, 2.2rem);
@@ -12,6 +10,10 @@
       color: hsl(356, 85%, 57%);
       font-size: clamp(1.4rem, 1rem + 0.5vw, 2rem);
     }
+  }
+
+  &__form {
+    display: grid;
   }
 
   &__fieldset {

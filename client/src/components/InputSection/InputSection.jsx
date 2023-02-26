@@ -23,7 +23,16 @@ export const InputSection = (props) => {
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" role="presentation"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg>
             <code>prompt</code>
           </label>
-          <Input type='text' name='prompt' id='prompt' onChange={(e) => setPrompt(e.currentTarget.value)} value={prompt} required autoComplete="off" />
+          <Input 
+            required 
+            type='text' 
+            id='prompt' 
+            name='prompt' 
+            value={prompt} 
+            autoComplete="off"
+            onChange={(e) => setPrompt(e.currentTarget.value)} 
+            placeholder="a street at 3:00 AM in Tokyo with neon signs" 
+          />
           <p className='input-section__description'>Input prompt</p>
         </fieldset>
         <fieldset className='input-section__fieldset'>
@@ -31,7 +40,7 @@ export const InputSection = (props) => {
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline-block mr-2 w-3 h-3" role="presentation"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
             <code>size</code>
           </label>
-          <Select options={['128x128', '256x256', '512x512', '1024x1024']} id='size' value={size} setValue={setSize}/>
+          <Select options={['256x256', '512x512', '1024x1024']} id='size' value={size} setValue={setSize}/>
           <p className='input-section__description'>Size of output image. Maximum size is 1024x1024 because of memory limits</p>
         </fieldset>
         <Button type="submit">Submit</Button>
