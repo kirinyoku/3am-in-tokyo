@@ -1,10 +1,15 @@
 import React from 'react';
 import BounceLoader from 'react-spinners/BounceLoader';
 import { saveAs } from 'file-saver';
-import { Button } from '../Button/Button';
+import { useSelector } from 'react-redux';
+import Button from '../Button/Button';
 import './OutputSection.scss';
 
-export const OutputSection = ({ predict, isLoading, error }) => {
+export const OutputSection = () => {
+
+  const error = useSelector(state => state.error);
+  const predict = useSelector(state => state.predict);
+  const isLoading = useSelector(state => state.isLoading);
 
   const downloadImage = (predict) => {
     saveAs(predict, 'image.jpeg');

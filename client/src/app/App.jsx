@@ -1,24 +1,36 @@
 import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Main from '../components/Main/Main';
 import Header from '../components/Header/Header';
 import Footer  from '../components/Footer/Footer';
-import imagePlaceholder from '../assets/image_placeholder.png';
 import InfoSection from '../components/InfoSection/InfoSection';
 import './App.scss';
 
 function App() {
 
-  const [prompt, setPrompt] = useState(''); // stores the user's prompt input
-  const [size, setSize] = useState('512x512'); // stores the size of the image to be generated
-  const [predict, setPredict] = useState(imagePlaceholder); // stores the generated image
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(false); 
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const dispatch = useDispatch();
+  const size = useSelector(state => state.size);
+  const prompt = useSelector(state => state.prompt);
+  const isDarkMode = useSelector(state => state.isDarkMode);
+
+  const setPredict = (predict = '') => {
+    dispatch({
+      type: 'SET_PREDICT',
+      payload: predict,
+    })
+  }
+
+  const setLoading = (status) => {
+    dispatch({
+      type: 'SET_IS_LOADING',
+      payload: status,
+    })
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setPredict('');
-    setIsLoading(true);
+    setLoading(true);
 
     try {
       const response = await fetch('https://api-3am-in-tokyo-kirinyoku.vercel.app/api/v1/dall-e', {
@@ -37,17 +49,23 @@ function App() {
       setPredict(data.data);
 
     } catch (error) {
-      setError(true);
+      dispatch({
+        type: 'SET_ERROR',
+        payload: true,
+      })
       setPredict('');
       console.log(error);
 
     } finally {
-      setIsLoading(false);
+      setLoading(false);
     } 
   }
 
   const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
+    dispatch({
+      type: 'SET_IS_DARKMODE',
+      payload: !isDarkMode,
+    })
   };
 
   useEffect(() => {
@@ -63,20 +81,8 @@ function App() {
 
   return (
     <div className='app'>
-        <Header 
-          isDarkMode={isDarkMode} 
-          toggleTheme={toggleTheme} 
-        />
-        <Main 
-          size={size}
-          error={error}
-          prompt={prompt} 
-          predict={predict}
-          setSize={setSize}
-          isLoading={isLoading}
-          setPrompt={setPrompt}
-          handleSubmit={handleSubmit} 
-        />
+        <Header toggleTheme={toggleTheme}/>
+        <Main handleSubmit={handleSubmit} />
         <InfoSection />
         <Footer />
     </div>

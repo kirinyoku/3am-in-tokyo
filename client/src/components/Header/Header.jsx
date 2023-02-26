@@ -1,8 +1,12 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { ThemeToggle } from '../ThemeToggle/ThemeToggle';
 import './Header.scss';
 
-const Header = ({ toggleTheme, isDarkMode }) => {
+const Header = ({ toggleTheme }) => {
+
+  const isDarkMode = useSelector(state => state.isDarkMode);
+
   return (
     <header className='header'>
       <h1 className='header__title'>
