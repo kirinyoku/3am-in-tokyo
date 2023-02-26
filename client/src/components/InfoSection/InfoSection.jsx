@@ -3,7 +3,7 @@ import { LicenseSection } from '../LicenseSection/LicenseSection';
 import example from '../../assets/example.png';
 import './InfoSection.scss';
 
-export const InfoSection = () => {
+const InfoSection = () => {
   return (
     <section className='info-section'>
       <div className='info-section__row'>
@@ -26,3 +26,5 @@ export const InfoSection = () => {
     </section>
   )
 }
+
+export default InfoSection;

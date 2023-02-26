@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeToggle } from '../ThemeToggle/ThemeToggle';
 import './Header.scss';
 
-export const Header = ({ toggleTheme, isDarkMode }) => {
+const Header = ({ toggleTheme, isDarkMode }) => {
   return (
     <header className='header'>
       <h1 className='header__title'>
@@ -12,3 +12,5 @@ export const Header = ({ toggleTheme, isDarkMode }) => {
     </header>
   )
 }
+
+export default Header;

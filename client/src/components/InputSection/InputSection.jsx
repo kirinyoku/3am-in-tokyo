@@ -11,13 +11,13 @@ export const InputSection = (props) => {
     prompt,
     setSize,
     setPrompt, 
-    sumbitHandler, 
+    handleSubmit, 
   } = props;
 
   return (
     <section className='input-section' aria-label='input'>
       <h2 className='input-section__title'>Input <span>インプット</span></h2>
-      <form className='input-section__form' onSubmit={(e) => sumbitHandler(e)} id='input-form'>
+      <form className='input-section__form' onSubmit={(e) => handleSubmit(e)} id='input-form'>
         <fieldset className='input-section__fieldset'>
           <label className='input-section__label' htmlFor="prompt">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" role="presentation"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg>
@@ -31,7 +31,7 @@ export const InputSection = (props) => {
             value={prompt} 
             autoComplete="off"
             onChange={(e) => setPrompt(e.currentTarget.value)} 
-            placeholder="a street at 3:00 AM in Tokyo with neon signs" 
+            placeholder="a street at 3am in Tokyo with neon signs" 
           />
           <p className='input-section__description'>Input prompt</p>
         </fieldset>

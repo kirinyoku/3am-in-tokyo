@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.scss';
 
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <footer className='footer'>
       <p className='footer__text'>Created by <span>Kirin</span></p>
@@ -21,3 +21,5 @@ export const Footer = () => {
     </footer>
   )
 }
+
+export default Footer;

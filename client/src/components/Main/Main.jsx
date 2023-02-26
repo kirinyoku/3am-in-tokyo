@@ -3,15 +3,17 @@ import { InputSection } from '../InputSection/InputSection'
 import { OutputSection } from '../OutputSection/OutputSection'
 import './Main.scss';
 
-export const Main = (props) => {
+const Main = (props) => {
   
   const {
     size,
+    error,
     prompt, 
     setSize, 
-    predict, 
+    predict,
+    isLoading, 
     setPrompt, 
-    sumbitHandler, 
+    handleSubmit, 
   } = props
 
   return (
@@ -21,9 +23,15 @@ export const Main = (props) => {
         prompt={prompt} 
         setSize={setSize}
         setPrompt={setPrompt} 
-        sumbitHandler={sumbitHandler} 
+        handleSubmit={handleSubmit} 
       />
-      <OutputSection predict={predict}/>
+      <OutputSection 
+        error={error} 
+        predict={predict} 
+        isLoading={isLoading} 
+      />
     </main>
   )
 }
+
+export default Main;

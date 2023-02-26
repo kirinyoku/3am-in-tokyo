@@ -4,7 +4,7 @@ import { saveAs } from 'file-saver';
 import { Button } from '../Button/Button';
 import './OutputSection.scss';
 
-export const OutputSection = ({ predict }) => {
+export const OutputSection = ({ predict, isLoading, error }) => {
 
   const downloadImage = (predict) => {
     saveAs(predict, 'image.jpeg');
@@ -19,13 +19,12 @@ export const OutputSection = ({ predict }) => {
     <section className='output' aria-label='output'>
       <h2 className='output__title'>Output <span>アウトプット</span></h2>
       <div className='output__predict'>
-        { predict 
-          ? predict === 'loading' 
-            ? <BounceLoader className='output__loading' color="var(--secondary-color)"/> 
-            : predict === 'error'
-              ? <p className='output__text-error'>It looks like this request may not follow our <a href="#content-policy">content policy</a></p>
-              : <img src={predict} alt="predict" />
-          : <p className='output__text'>Images you generated will be shown here</p>
+        { isLoading && <BounceLoader className='output__loading' color="var(--secondary-color)"/> }
+        { predict && <img src={predict} alt="predict" /> }
+        { error && 
+          <p className='output__text-error'>
+            It looks like this request may not follow our <a href="#content-policy">content policy</a>
+          </p> 
         }
       </div>
       <footer className='output__footer'>
