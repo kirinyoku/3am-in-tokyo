@@ -1,5 +1,5 @@
 import { createStore } from 'redux';
-import imagePlaceholder from '../assets/image_placeholder.png'
+import imagePlaceholder from '../assets/image_placeholder.jpg';
 
 const initialState = {
   prompt: '',

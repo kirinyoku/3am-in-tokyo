@@ -38,7 +38,7 @@ export const InputSection = (props) => {
             value={prompt} 
             autoComplete="off"
             onChange={(e) => changeHandler(e, 'SET_PROMPT')} 
-            placeholder="a street at 3am in Tokyo with neon signs" 
+            placeholder="An astronaut riding a horse in photorealistic style." 
           />
           <p className='input-section__description'>Input prompt</p>
         </fieldset>
