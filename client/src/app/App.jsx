@@ -20,16 +20,24 @@ function App() {
     })
   }
 
-  const setLoading = (status) => {
+  const setLoading = (state) => {
     dispatch({
       type: 'SET_IS_LOADING',
-      payload: status,
+      payload: state,
+    })
+  }
+
+  const setError = (state) => {
+    dispatch({
+      type: 'SET_ERROR',
+      payload: state,
     })
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setPredict('');
+    setError(false);
     setLoading(true);
 
     try {
@@ -49,10 +57,7 @@ function App() {
       setPredict(data.data);
 
     } catch (error) {
-      dispatch({
-        type: 'SET_ERROR',
-        payload: true,
-      })
+      setError(true);
       setPredict('');
       console.log(error);
 
