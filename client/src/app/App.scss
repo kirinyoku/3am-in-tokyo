@@ -1,4 +1,9 @@
 .app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  min-height: 100svh;
   margin: 0 auto;
   width: min(90rem, 95%);
 }

@@ -3,12 +3,11 @@ import './ThemeToggle.scss';
 
 export const ThemeToggle = ({ toggleTheme }) => {
   return (
-    <div className='theme'>
-      <span className='theme__label'>Dark Mode</span>
+    <div className="theme">
       <label className="theme__toggle">
-        <input type="checkbox" onChange={toggleTheme} defaultChecked/>
+        <input type="checkbox" onChange={toggleTheme} defaultChecked />
         <span className="theme__toggle-slider round"></span>
       </label>
     </div>
-  )
-}
+  );
+};
