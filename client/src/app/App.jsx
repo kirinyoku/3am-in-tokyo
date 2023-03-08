@@ -1,11 +1,13 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import getPredict from '../api/getPredict';
 import Main from '../components/Main/Main';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import InfoSection from '../components/InfoSection/InfoSection';
+import LicenseSection from '../components/LicenseSection/LicenseSection';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useMutation } from 'react-query';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { LicenseSection } from '../components/LicenseSection/LicenseSection';
 import './App.scss';
 
 function App() {
@@ -13,6 +15,9 @@ function App() {
   const size = useSelector((state) => state.size);
   const prompt = useSelector((state) => state.prompt);
   const isDarkMode = useSelector((state) => state.isDarkMode);
+
+  // React Query
+  // const mutation = useMutation(getPredict);
 
   const setPredict = (predict = '') => {
     dispatch({
@@ -40,6 +45,7 @@ function App() {
     setPredict('');
     setError(false);
     setLoading(true);
+    // mutation.mutate({ prompt, size });
 
     try {
       const response = await fetch('https://api-3am-in-tokyo-kirinyoku.vercel.app/api/v1/dall-e', {
