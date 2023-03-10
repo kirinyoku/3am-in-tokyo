@@ -17,7 +17,11 @@ function App() {
   const isDarkMode = useSelector((state) => state.isDarkMode);
 
   // React Query
-  // const mutation = useMutation(getPredict);
+  const { mutate } = useMutation(getPredict, {
+    onError: () => setError(true),
+    onSettled: () => setLoading(false),
+    onSuccess: (data) => setPredict(data),
+  });
 
   const setPredict = (predict = '') => {
     dispatch({
@@ -43,32 +47,8 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setPredict('');
-    setError(false);
     setLoading(true);
-    // mutation.mutate({ prompt, size });
-
-    try {
-      const response = await fetch('https://api-3am-in-tokyo-kirinyoku.vercel.app/api/v1/dall-e', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ prompt, size }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Request failed');
-      }
-
-      const data = await response.json();
-      setPredict(data.data);
-    } catch (error) {
-      setError(true);
-      setPredict('');
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
+    mutate({ prompt, size });
   };
 
   const toggleTheme = () => {

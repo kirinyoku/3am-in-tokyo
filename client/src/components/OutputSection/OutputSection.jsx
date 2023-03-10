@@ -7,8 +7,8 @@ import Button from '../Button/Button';
 import './OutputSection.scss';
 
 export const OutputSection = () => {
-  const error = useSelector((state) => state.error);
   const predict = useSelector((state) => state.predict);
+  const isError = useSelector((state) => state.isError);
   const isLoading = useSelector((state) => state.isLoading);
 
   const downloadImage = (predict) => {
@@ -28,7 +28,7 @@ export const OutputSection = () => {
       <div className="output__predict">
         {isLoading && <BounceLoader className="output__loading" color="var(--secondary-color)" />}
         {predict && <img src={predict} alt="predict" />}
-        {error && (
+        {isError && (
           <p className="output__text-error">
             It looks like this request may not follow our{' '}
             <Link to="/content-policy">content policy</Link>
