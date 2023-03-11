@@ -1,4 +1,4 @@
-.output {
+.result {
   @media (min-width: 62.5rem) {
     width: auto;
   }
@@ -34,7 +34,7 @@
     text-align: center;
 
     &-error {
-      @extend .output__text;
+      @extend .result__text;
       padding: 0 0.5rem;
 
       a {

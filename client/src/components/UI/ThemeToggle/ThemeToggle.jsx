@@ -1,7 +1,7 @@
 import React from 'react';
 import './ThemeToggle.scss';
 
-export const ThemeToggle = ({ toggleTheme }) => {
+const ThemeToggle = ({ toggleTheme }) => {
   return (
     <div className="theme">
       <label className="theme__toggle">
@@ -11,3 +11,5 @@ export const ThemeToggle = ({ toggleTheme }) => {
     </div>
   );
 };
+
+export default ThemeToggle;

@@ -1,9 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 import store from './store';
+import ReactDOM from 'react-dom/client';
+import App from './components/App/App';
 import { Provider } from 'react-redux';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import App from './app/App';
 
 import './index.scss';
 

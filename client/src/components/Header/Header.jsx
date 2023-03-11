@@ -1,7 +1,7 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { ThemeToggle } from '../ThemeToggle/ThemeToggle';
+import ThemeToggle from '../UI/ThemeToggle/ThemeToggle';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './Header.scss';
 
 const Header = ({ toggleTheme }) => {

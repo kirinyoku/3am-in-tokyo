@@ -1,19 +1,19 @@
 import React from 'react';
 import example from '../../assets/example.png';
-import './InfoSection.scss';
+import './Info.scss';
 
-const InfoSection = () => {
+const Info = () => {
   return (
-    <section className="info-section">
-      <div className="info-section__row">
-        <h2 className="info-section__title">Readme</h2>
-        <p className="info-section__text">
+    <main className="info">
+      <div className="info__row">
+        <h2 className="info__title">Readme</h2>
+        <p className="info__text">
           weights from:{' '}
           <a href="https://openai.com/dall-e-2/" rel="noreferrer" target="_blank">
             openai.com/dall-e-2
           </a>
         </p>
-        <article className="info-section__article">
+        <article className="info__article">
           <h1>
             <b>DALL-E</b>
           </h1>
@@ -39,8 +39,8 @@ const InfoSection = () => {
           </pre>
         </article>
       </div>
-    </section>
+    </main>
   );
 };
 
-export default InfoSection;
+export default Info;

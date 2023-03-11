@@ -3,10 +3,10 @@ import BounceLoader from 'react-spinners/BounceLoader';
 import { saveAs } from 'file-saver';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Button from '../Button/Button';
-import './OutputSection.scss';
+import Button from '../UI/Button/Button';
+import './Result.scss';
 
-export const OutputSection = () => {
+const Result = () => {
   const predict = useSelector((state) => state.predict);
   const isError = useSelector((state) => state.isError);
   const isLoading = useSelector((state) => state.isLoading);
@@ -21,24 +21,26 @@ export const OutputSection = () => {
   };
 
   return (
-    <section className="output" aria-label="output">
-      <h2 className="output__title">
+    <section className="result" aria-label="result">
+      <h2 className="result__title">
         Output <span>アウトプット</span>
       </h2>
-      <div className="output__predict">
-        {isLoading && <BounceLoader className="output__loading" color="var(--secondary-color)" />}
+      <div className="result__predict">
+        {isLoading && <BounceLoader className="result__loading" color="var(--secondary-color)" />}
         {predict && <img src={predict} alt="predict" />}
         {isError && (
-          <p className="output__text-error">
+          <p className="result__text-error">
             It looks like this request may not follow our{' '}
             <Link to="/content-policy">content policy</Link>
           </p>
         )}
       </div>
-      <footer className="output__footer">
+      <footer className="result__footer">
         <Button onClick={() => downloadImage(predict)}>Download</Button>
         <Button onClick={(e) => copyLink(predict, e)}>Share</Button>
       </footer>
     </section>
   );
 };
+
+export default Result;

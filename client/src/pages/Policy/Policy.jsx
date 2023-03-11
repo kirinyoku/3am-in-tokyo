@@ -1,9 +1,9 @@
 import React from 'react';
-import './LicenseSection.scss';
+import './Policy.scss';
 
-const LicenseSection = () => {
+const Policy = () => {
   return (
-    <section className="content-policy" id="content-policy">
+    <main className="content-policy" id="content-policy">
       <h2 className="content-policy__title">Content policy</h2>
       <p className="content-policy__text">In your usage, you must adhere to our Content Policy:</p>
       <p className="content-policy__text">
@@ -66,8 +66,8 @@ const LicenseSection = () => {
           Spam: <span>unsolicited bulk content.</span>
         </li>
       </ul>
-    </section>
+    </main>
   );
 };
 
-export default LicenseSection;
+export default Policy;

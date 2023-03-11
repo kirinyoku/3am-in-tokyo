@@ -1,5 +1,4 @@
-.input-section {
-
+.form {
   &__title {
     font-weight: 500;
     font-size: clamp(1.8rem, 1rem + 1vw, 2.2rem);
@@ -12,7 +11,7 @@
     }
   }
 
-  &__form {
+  form {
     display: grid;
   }
 
@@ -43,7 +42,7 @@
     }
   }
 
-  &__description{
+  &__description {
     opacity: 0.5;
   }
 }
