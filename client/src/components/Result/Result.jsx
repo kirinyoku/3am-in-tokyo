@@ -12,11 +12,19 @@ const Result = () => {
   const isLoading = useSelector((state) => state.isLoading);
 
   const downloadImage = (predict) => {
-    saveAs(predict, 'image.jpeg');
+    const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/';
+    const imageUrl = predict.replace('https://', '');
+    console.log(imageUrl);
+    const downloadUrl = corsAnywhereUrl + 'https://' + imageUrl;
+    console.log(downloadUrl);
+    saveAs(downloadUrl);
   };
 
   const copyLink = (predict, event) => {
     event.currentTarget.innerHTML = 'URL Copied';
+    setTimeout(() => {
+      event.target.innerHTML = 'share';
+    }, 2000);
     navigator.clipboard.writeText(predict);
   };
 
@@ -35,10 +43,10 @@ const Result = () => {
           </p>
         )}
       </div>
-      <footer className="result__footer">
+      <menu className="result__menu">
         <Button onClick={() => downloadImage(predict)}>Download</Button>
         <Button onClick={(e) => copyLink(predict, e)}>Share</Button>
-      </footer>
+      </menu>
     </section>
   );
 };

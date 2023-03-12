@@ -1,18 +1,15 @@
 .button {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: inherit;
   line-height: 1;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  padding: 1em 2.5em;
+  padding: 1em 0;
   color: var(--primary-color);
   background-color: var(--secondary-color);
   border: 0.1rem solid var(--secondary-color);
   cursor: pointer;
-  transition: 
-    color 200ms linear,
-    border 200ms linear,
-    background-color 200ms linear;
+  transition: color 200ms linear, border 200ms linear, background-color 200ms linear;
 
   &:hover {
     color: var(--secondary-color);
