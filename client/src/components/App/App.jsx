@@ -1,6 +1,6 @@
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import { Home, Policy, Info } from '../../pages';
+import { Home, Policy, Info, NotFound } from '../../pages';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -36,6 +36,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/info" element={<Info />} />
           <Route path="/content-policy" element={<Policy />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </Router>
