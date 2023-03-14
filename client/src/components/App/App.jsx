@@ -1,10 +1,15 @@
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import { Home, Policy, Info, NotFound } from '../../pages';
-import { useEffect } from 'react';
+import Loading from '../../pages/Loading/Loading';
+import { Suspense, useEffect, lazy } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.scss';
+
+const Info = lazy(() => import('../../pages/Info/Info.jsx'));
+const Policy = lazy(() => import('../../pages/Policy/Policy.jsx'));
+const NotFound = lazy(() => import('../../pages/NotFound/NotFound.jsx'));
+const Home = lazy(() => import('../../pages/Home/Home.jsx'));
 
 const App = () => {
   const dispatch = useDispatch();
@@ -32,12 +37,14 @@ const App = () => {
     <div className="app">
       <Router>
         <Header toggleTheme={toggleTheme} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/info" element={<Info />} />
-          <Route path="/content-policy" element={<Policy />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Suspense fallback={<Loading />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/info" element={<Info />} />
+            <Route path="/content-policy" element={<Policy />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
         <Footer />
       </Router>
     </div>

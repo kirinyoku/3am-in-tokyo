@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Button from '../UI/Button/Button';
 import Input from '../UI/Input/Input';
 import Select from '../UI/Select/Select';
 import getPredict from '../../api/getPredict';
 import { useMutation } from 'react-query';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import './Form.scss';
 
 const Form = () => {
   const dispatch = useDispatch();
-  const size = useSelector((state) => state.size);
-  const prompt = useSelector((state) => state.prompt);
+  const promptInput = useRef(null);
+  const sizeInput = useRef();
 
   const { mutate } = useMutation(getPredict, {
     onError: () => setError(true),
@@ -39,17 +39,12 @@ const Form = () => {
     });
   };
 
-  const handleChange = (e, type) => {
-    dispatch({
-      type,
-      payload: e.currentTarget.value,
-    });
-  };
-
   const onSubmit = async (e) => {
     e.preventDefault();
     setPredict('');
     setLoading(true);
+    const size = sizeInput.current.value;
+    const prompt = promptInput.current.value;
     mutate({ prompt, size });
   };
 
@@ -78,12 +73,11 @@ const Form = () => {
           </label>
           <Input
             required
-            type="text"
             id="prompt"
+            type="text"
             name="prompt"
-            value={prompt}
+            ref={promptInput}
             autoComplete="off"
-            onChange={(e) => handleChange(e, 'SET_PROMPT')}
             placeholder="An astronaut riding a horse in photorealistic style."
           />
           <p className="form__description">Input prompt</p>
@@ -111,9 +105,9 @@ const Form = () => {
           </label>
           <Select
             id="size"
+            ref={sizeInput}
             defaultValue="512x512"
             options={['256x256', '512x512', '1024x1024']}
-            onChange={(e) => handleChange(e, 'SET_SIZE')}
           />
           <p className="form__description">
             Size of output image. Maximum size is 1024x1024 because of memory limits

@@ -1,8 +1,9 @@
 import React from 'react';
+import { forwardRef } from 'react';
 import './Input.scss';
 
-const Input = (props) => {
-  return <input className="input" {...props} />;
-};
+const Input = forwardRef((props, ref) => {
+  return <input className="input" ref={ref} {...props} />;
+});
 
 export default Input;

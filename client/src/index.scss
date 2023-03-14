@@ -46,6 +46,10 @@ body.dark {
   --accent-color: hsl(0, 0%, 28%);
 }
 
+main {
+  flex-grow: 1;
+}
+
 a {
   color: inherit;
   text-decoration: none;

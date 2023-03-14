@@ -2,8 +2,6 @@ import { createStore } from 'redux';
 import imagePlaceholder from '../assets/image_placeholder.jpg';
 
 const initialState = {
-  prompt: '',
-  size: '512x512',
   predict: imagePlaceholder,
   isDarkMode: true,
   isError: false,
@@ -12,16 +10,6 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'SET_PROMPT':
-      return {
-        ...state,
-        prompt: action.payload,
-      };
-    case 'SET_SIZE':
-      return {
-        ...state,
-        size: action.payload,
-      };
     case 'SET_PREDICT':
       return {
         ...state,
